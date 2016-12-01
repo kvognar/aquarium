@@ -14,4 +14,9 @@
 #
 
 class Impression < ActiveRecord::Base
+
+  belongs_to :user
+  belongs_to :work
+
+  validates :user, :work, presence: true
 end

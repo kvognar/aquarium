@@ -11,4 +11,7 @@
 #
 
 class Note < ActiveRecord::Base
+
+  belongs_to :impression
+  has_one :user, through: :impression
 end

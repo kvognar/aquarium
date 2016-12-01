@@ -11,4 +11,6 @@
 #
 
 class User < ActiveRecord::Base
+  has_many :impressions
+  has_many :notes, through: :impressions
 end
