@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Aquarium
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body class="#{controller_name} #{action_name}"
+    = render partial: 'layouts/navbar'
+    - if flash[:success]
+      .success= flash[:success]
+    - if flash[:errors]
+      ul
+        - flash[:errors].each do |message|
+          li= message
+    .content
+      = yield

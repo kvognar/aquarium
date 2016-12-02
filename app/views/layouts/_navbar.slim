@@ -1,0 +1,10 @@
+nav.navbar role='navigation'
+  .container-fluid
+    .navbar-header
+      = link_to 'Aquarium', root_url, class: 'navbar-brand'
+    ul.nav.navbar-nav
+      - if signed_in?
+        li = link_to 'New', new_impression_url
+      - else
+        li = link_to 'Sign in', new_session_url
+        li = link_to 'Sign up', new_user_url

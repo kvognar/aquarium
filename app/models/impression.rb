@@ -19,4 +19,6 @@ class Impression < ActiveRecord::Base
   belongs_to :work
 
   validates :user, :work, presence: true
+
+  delegate :title, to: :work
 end

@@ -1,0 +1,8 @@
+form.impression-form action=impressions_url method="POST"
+  input type="hidden" value=form_authenticity_token name="authenticity_token"
+  input.form-control type="text" name="impression[title]" placeholder="title" value=@impression.work.try(:title)
+  input.form-control type="text" name="impression[artist]" placeholder="artist"
+  input.form-control.date type="date" name="impression[finish_date]"
+  textarea.form-control name="impression[reflection]" placeholder="so..."
+  textarea.form-control name="impression[spoiler_reflection]" placeholder="(spoilers)"
+  input.form-control type="submit"
